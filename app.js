@@ -56,7 +56,7 @@ storedTitle =  _.chain(storedTitle).toLower().kebabCase().value();
       console.log("Not a match!");
     }
   });
-res.send("Wake me up when I care");
+res.sendFile(__dirname + '/views/post.ejs');
 });
 
 app.post("/compose", (req, res) => {
