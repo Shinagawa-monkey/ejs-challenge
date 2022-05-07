@@ -51,12 +51,11 @@ posts.forEach(post => {
 let storedTitle = post.title;
 storedTitle =  _.chain(storedTitle).toLower().kebabCase().value();
     if (storedTitle === requestedTitle) {
-      console.log("Match found!");
-    } else {
-      console.log("Not a match!");
+      res.render("post", {
+        title: post.title, content: post.content
+      });
     }
   });
-res.sendFile(__dirname + '/views/post.ejs');
 });
 
 app.post("/compose", (req, res) => {
