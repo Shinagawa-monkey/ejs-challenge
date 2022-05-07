@@ -44,12 +44,10 @@ app.get("/compose", (req, res) => {
 });
 
 app.get("/posts/:postName", (req, res) => {
-let requestedTitle = req.params.postName;
-requestedTitle = _.chain(requestedTitle).toLower().kebabCase().value();
+const requestedTitle = _.chain(req.params.postName).toLower().kebabCase().value();
 
 posts.forEach(post => {
-let storedTitle = post.title;
-storedTitle =  _.chain(storedTitle).toLower().kebabCase().value();
+const storedTitle = _.chain(post.title).toLower().kebabCase().value();
     if (storedTitle === requestedTitle) {
       res.render("post", {
         title: post.title, content: post.content
