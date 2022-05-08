@@ -9,6 +9,8 @@ const aboutContent = "Wake up wander around the house making large amounts of no
 const contactContent = "Paw at beetle and eat it before it gets away roll on the floor purring your whiskers off take a big fluffing crap so eat half my food and ask for more. Show belly claw drapes eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap for step on your keyboard while you're gaming and then turn in a circle purr when being pet, for kitty poochy. Attack curtains furrier and even more furrier hairball, pet me pet me don't pet me sleep on dog bed, force dog to sleep on floor where is it? i saw that bird i need to bring it home to mommy squirrel!";
 
 const app = express();
+// app.locals._ = _;
+
 const port = 3000;
 
 const posts = [];
@@ -64,7 +66,6 @@ app.post("/compose", (req, res) => {
   posts.push(post);
   res.redirect("/");
 });
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
